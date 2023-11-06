@@ -1,0 +1,66 @@
+body{
+    overflow-x: hidden;
+    font-family: "Arial Narrow", serif;
+}
+#page{
+    box-shadow: 12px 0 15px -4px lightgray, -12px 0 8px -4px lightgray;
+    width: 80%;
+    margin:auto;
+}
+
+#upper-block{
+    display: flex;
+    justify-content: left;
+    align-items: end;
+    background-color: cadetblue;
+    padding: 20px;
+    color: white;
+}
+
+#upper-block h1{
+    font-size: 3em;
+}
+
+#portrait{
+    border-radius: 50%;
+    border: 5px solid lightslategrey;
+    width:200px;
+    height: 200px;
+}
+
+#lower-block{
+    display: flex;
+}
+#lower-block>div{
+    flex:1;
+    padding: 10px;
+}
+#skills{
+    background-color: aliceblue;
+}
+
+@media (min-width: 1000px) {
+    #name-block{
+        padding-left: 20px;
+    }
+    #about-me{
+        border-right: 1px solid grey;
+    }
+    #lower-block{
+        padding-bottom: 200px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #page{
+        box-shadow: none;
+        width: 100%;
+    }
+    #lower-block{
+        flex-direction: column;
+    }
+    #upper-block{
+        flex-direction: column;
+        align-items: center;
+    }
+}
