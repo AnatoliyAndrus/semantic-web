@@ -7,7 +7,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/self-description.owl"/>
+    <owl:Ontology rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl"/>
     
 
 
@@ -366,9 +366,9 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/self-description.owl#Math_Teacher -->
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher -->
 
-    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/self-description.owl#Math_Teacher">
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/self-description.owl#Teacher"/>
     </owl:NamedIndividual>
 </rdf:RDF>
