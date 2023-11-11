@@ -6,8 +6,30 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:self-description="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#">
     <owl:Ontology rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#int -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </rdf:Description>
     
 
 
@@ -22,6 +44,122 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasAunt -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasAunt">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasCountryOfBirth -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasCountryOfBirth">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isCountryOfBirthOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasCountryOfOccupation -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasCountryOfOccupation">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isContryOfOccupationOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasDegree -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasDegree">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isDegreeOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Degree"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasEducationalInstitution -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasEducationalInstitution">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isEducationalInsitutionOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Institution"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGrandchild -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGrandchild">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGrandparent"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGrandparent -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGrandparent">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNephew -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNephew">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNiece -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNiece">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession">
@@ -32,10 +170,93 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill">
+        <owl:inverseOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isSkillOf"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasUncle -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasUncle">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isContryOfOccupationOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isContryOfOccupationOf">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isCountryOfBirthOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isCountryOfBirthOf">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isDegreeOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isDegreeOf">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Degree"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isEducationalInsitutionOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isEducationalInsitutionOf">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Institution"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isProfessionOf -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isProfessionOf">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Profession"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isSkillOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#isSkillOf">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
     </owl:ObjectProperty>
     
@@ -52,12 +273,28 @@
     
 
 
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGender -->
+
+    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGender">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasYearOfBirth -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasYearOfBirth">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
     </owl:DatatypeProperty>
     
 
@@ -73,27 +310,21 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#City -->
-
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#City"/>
-    
-
-
     <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Education_Degree -->
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Degree -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Education_Degree"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Degree"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Education_Institution -->
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Institution -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Education_Institution"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Institution"/>
     
 
 
@@ -113,10 +344,10 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher -->
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Teacher"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
     </owl:Class>
     
 
@@ -157,6 +388,14 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Secondary_School -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Secondary_School">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Institution"/>
+    </owl:Class>
+    
+
+
     <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill"/>
@@ -167,6 +406,22 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Teacher">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Profession"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#University -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#University">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
     </owl:Class>
     
 
@@ -198,6 +453,14 @@
     
 
 
+    <!-- http://dbpedia.org/page/Bus_driver -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Bus_driver">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Profession"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://dbpedia.org/page/C-sharp -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/page/C-sharp">
@@ -214,6 +477,22 @@
     
 
 
+    <!-- http://dbpedia.org/page/Designer -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Designer">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Profession"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Doctor_of_Philosophy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Doctor_of_Philosophy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Degree"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://dbpedia.org/page/English_language -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/page/English_language">
@@ -222,10 +501,26 @@
     
 
 
+    <!-- http://dbpedia.org/page/Finland -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Finland">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://dbpedia.org/page/Finnish_language -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Finnish_language">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/France -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/France">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
     </owl:NamedIndividual>
     
 
@@ -254,10 +549,66 @@
     
 
 
+    <!-- http://dbpedia.org/page/Italy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Italy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://dbpedia.org/page/JavaScript -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/page/JavaScript">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Programming_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Math -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Math">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/National_Academy_of_Visual_Arts_and_Architecture -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/National_Academy_of_Visual_Arts_and_Architecture">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/National_University_of_Kharkiv -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/National_University_of_Kharkiv">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/National_University_of_Kyiv-Mohyla_Academy -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/National_University_of_Kyiv-Mohyla_Academy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Node.js -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Node.js">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Programming_Framework"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Physics -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Physics">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill"/>
     </owl:NamedIndividual>
     
 
@@ -282,6 +633,30 @@
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Spring_Framework">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Programming_Framework"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Taras_Shevchenko_National_University_of_Kyiv -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Taras_Shevchenko_National_University_of_Kyiv">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#University"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/TypeScript -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/TypeScript">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Programming_Language"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://dbpedia.org/page/Ukraine -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Ukraine">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Country"/>
     </owl:NamedIndividual>
     
 
@@ -326,6 +701,14 @@
     
 
 
+    <!-- http://dbpedia.org/page/Bachelor&apos;s_degree -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Bachelor&apos;s_degree">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Degree"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://dbpedia.org/page/C++ -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/page/C++">
@@ -350,6 +733,14 @@
     
 
 
+    <!-- http://dbpedia.org/page/Master&apos;s_degree -->
+
+    <owl:NamedIndividual rdf:about="http://dbpedia.org/page/Master&apos;s_degree">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Educational_Degree"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://dbpedia.org/page/React_(JavaScript_library) -->
 
     <owl:NamedIndividual rdf:about="http://dbpedia.org/page/React_(JavaScript_library)">
@@ -366,11 +757,1735 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <owl:differentFrom rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko_(engineer)"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/Finland"/>
+        <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/Italy"/>
+        <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/National_University_of_Kyiv-Mohyla_Academy"/>
+        <self-description:hasEducationalInstitution rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Rusanivskiy_Liceum"/>
+        <self-description:hasSibling rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Mykola_Andrusenko"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/C-sharp"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/CSS"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/English_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/HTML"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Italian_Language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/JavaScript"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Math"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Spring_Framework"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Angular_(web_framework)"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/C++"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Java_(programming_language)"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/React_(JavaScript_library)"/>
+        <rdfs:comment>This individual is grandson of Anatolii_Andrusenko_(engineer). They have the same name, but they are different individuals</rdfs:comment>
+        <self-description:hasGender>male</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2004</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Dmitro_Andrusenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Dmitro_Andrusenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/France"/>
+        <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Doctor_of_Philosophy"/>
+        <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/Taras_Shevchenko_National_University_of_Kyiv"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Scientist"/>
+        <self-description:hasProfession rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Physics_Teacher"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
+        <self-description:hasWife rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Oksana_Andrusenko"/>
+        <self-description:hasGender>male</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1962</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Drawing -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Drawing">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Driving -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Driving">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Skill"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Driwing -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Driwing"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Engineer -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Engineer">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Profession"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Galina_Andrusenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Galina_Andrusenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasChild rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Dmitro_Andrusenko"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Master&apos;s_degree"/>
+        <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/National_University_of_Kharkiv"/>
+        <self-description:hasHusband rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko_(engineer)"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Artist"/>
+        <self-description:hasProfession rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Museum_director"/>
+        <self-description:hasGender>female</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1937</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Irina_Somik -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Irina_Somik">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasChild rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Maria_Ponomarenko"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Master&apos;s_degree"/>
+        <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/National_Academy_of_Visual_Arts_and_Architecture"/>
+        <self-description:hasHusband rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Taras_Ponomarenko"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Artist"/>
+        <self-description:hasSibling rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Oksana_Andrusenko"/>
+        <self-description:hasGender>female</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1978</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Ivan_Klymenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Ivan_Klymenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Master&apos;s_degree"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Video_game_developer"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Web_developer"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Node.js"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Unreal_Engine"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Godot_(game_engine)"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Unity_(game_engine)"/>
+        <self-description:hasWife rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Olena_Andrusenko"/>
+        <self-description:hasGender>male</self-description:hasGender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Kindergartener -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Kindergartener">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Profession"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Maria_Ponomarenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Maria_Ponomarenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Bachelor&apos;s_degree"/>
+        <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/Taras_Shevchenko_National_University_of_Kyiv"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Designer"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/English_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/C++"/>
+        <self-description:hasGender>female</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2001</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher -->
 
     <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Teacher"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Museum_director -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Museum_director">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Profession"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Mykola_Andrusenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Mykola_Andrusenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/Italy"/>
+        <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/National_University_of_Kyiv-Mohyla_Academy"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/C-sharp"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/English_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Italian_Language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Math"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Physics"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/C++"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Java_(programming_language)"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Unity_(game_engine)"/>
+        <self-description:hasGender>male</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2004</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Mykola_Somik -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Mykola_Somik">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasChild rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Irina_Somik"/>
+        <self-description:hasChild rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Oksana_Andrusenko"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Bus_driver"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/German_Language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
+        <self-description:hasWife rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Nina_Somik"/>
+        <self-description:hasGender>male</self-description:hasGender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Nina_Somik -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Nina_Somik">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasHusband rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Mykola_Somik"/>
+        <self-description:hasProfession rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Kindergartener"/>
+        <self-description:hasGender>female</self-description:hasGender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Oksana_Andrusenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Oksana_Andrusenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasChild rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/Italy"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Master&apos;s_degree"/>
+        <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/Taras_Shevchenko_National_University_of_Kyiv"/>
+        <self-description:hasProfession rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher"/>
+        <self-description:hasGender>female</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1969</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Olena_Andrusenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Olena_Andrusenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/Italy"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Master&apos;s_degree"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Architect"/>
+        <self-description:hasSibling rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/English_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
+        <self-description:hasGender>female</self-description:hasGender>
+        <self-description:hasYearOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1994</self-description:hasYearOfBirth>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Physics_Teacher -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Physics_Teacher">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Teacher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Rusanivskiy_Liceum -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Rusanivskiy_Liceum">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Secondary_School"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Taras_Ponomarenko -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Taras_Ponomarenko">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasProfession rdf:resource="http://dbpedia.org/page/Artist"/>
+        <self-description:hasGender>male</self-description:hasGender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko_(engineer) -->
+
+    <owl:NamedIndividual rdf:about="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Anatolii_Andrusenko_(engineer)">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Person"/>
+        <self-description:hasChild rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Dmitro_Andrusenko"/>
+        <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
+        <self-description:hasDegree rdf:resource="http://dbpedia.org/page/Doctor_of_Philosophy"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
+        <self-description:hasWife rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Galina_Andrusenko"/>
+        <rdfs:comment>This individual is paternal grandfather of Anatolii_Andrusenko. They have the same name, but they are different individuals</rdfs:comment>
+        <self-description:hasGender>male</self-description:hasGender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasAunt"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNephew"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasCountryOfBirth"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasCountryOfOccupation"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasCountryOfBirth"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Ukraine"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasDegree"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Doctor_of_Philosophy"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasDegree"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Master&apos;s_degree"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasDegree"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Master&apos;s_degree"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasDegree"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Bachelor&apos;s_degree"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGrandchild"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGrandparent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Architect"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Drawing"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="http://dbpedia.org/page/Math"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNephew"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Artist"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Drawing"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Bus_driver"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Driving"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Scientist"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Physics"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="http://dbpedia.org/page/Math"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Web_developer"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/HTML"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="http://dbpedia.org/page/CSS"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/JavaScript"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Engineer"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Physics"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="http://dbpedia.org/page/Math"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Math_Teacher"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Math"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasProfession"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Physics_Teacher"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSkill"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="http://dbpedia.org/page/Physics"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasAunt"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGender"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2>female</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasGender"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2>male</swrl:argument2>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasAunt"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNiece"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasNiece"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasParent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Woman"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasAunt"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasAunt"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Man"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasHusband"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasWife"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#hasChild"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
 </rdf:RDF>
 
 
