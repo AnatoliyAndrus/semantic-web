@@ -777,6 +777,7 @@
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Math"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Russian_language"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Spring_Framework"/>
+        <self-description:hasSkill rdf:resource="http://dbpedia.org/page/TypeScript"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Ukrainian_Language"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Angular_(web_framework)"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/C++"/>
@@ -938,6 +939,7 @@
         <self-description:hasCountryOfBirth rdf:resource="http://dbpedia.org/page/Ukraine"/>
         <self-description:hasCountryOfOccupation rdf:resource="http://dbpedia.org/page/Italy"/>
         <self-description:hasEducationalInstitution rdf:resource="http://dbpedia.org/page/National_University_of_Kyiv-Mohyla_Academy"/>
+        <self-description:hasEducationalInstitution rdf:resource="https://raw.githubusercontent.com/AnatoliyAndrus/semantic-web/main/self-description.owl#Rusanivskiy_Liceum"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/C-sharp"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/English_language"/>
         <self-description:hasSkill rdf:resource="http://dbpedia.org/page/Italian_Language"/>
